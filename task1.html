@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задание 1 | тетраедр</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img hidden src="textures/texture2.jpg" alt="">
+<img hidden src="textures/texture3.jpg" alt="">
+<img hidden src="textures/texture4.jpg" alt="">
+
+<div id="app">
+  <canvas id="canvas3D" width="3000" height="3000">Ваш браузер не поддерживает элемент canvas</canvas>
+</div>
+
+
+</body>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 a_position;
+    attribute vec3 a_color;
+    varying vec3 fragColor;
+
+    uniform mat4 u_mvMatrix;
+    uniform mat4 u_pMatrix;
+
+    void main(void) {
+      fragColor = a_color;
+      gl_Position = u_pMatrix * u_mvMatrix * vec4(a_position, 1.2);
+    }
+</script>
+
+
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision lowp float;
+    varying vec3 fragColor;
+
+    void main(void) {
+        gl_FragColor = vec4(fragColor, 1.0);
+    }
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>-->
+<script src="scripts/script1.js"></script>
+</html>

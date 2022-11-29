@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+button{
+    padding: 10px 10px;
+    background: white;
+    color: black;
+    outline: none;
+    border: 2px solid;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Arial Narrow";
+    cursor: pointer;
+}
+
+#canvas3D{
+    width: 3000px;
+    height: 3000px;
+    display: block;
+}
+
+.buttons{
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
